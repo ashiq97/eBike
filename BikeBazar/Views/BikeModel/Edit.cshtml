@@ -1,0 +1,33 @@
+﻿@model BikeBazar.Models.ViewModels.BikeModelVM
+@{
+    ViewData["Title"] = "Edit";
+}
+<br />
+<h2 class="text-info">Add Make of vehicle</h2>
+
+<form action="Edit" method="post">
+    <div class="form-group row">
+        <input hidden asp-for="BikeModel.Id" />
+        <div class="col-2">
+            <label asp-for="Makes"></label>
+        </div>
+        <div class="col-4">
+            <select asp-for="BikeModel.MakeId" asp-items="Model.CSelectListItem(Model.Makes)" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <div class="col-2">
+            <label asp-for="BikeModel.Name"></label>
+        </div>
+        <div class="col-4">
+            <input asp-for="BikeModel.Name" class="form-control" />
+        </div>
+    </div>
+    <br />
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary"  value="Update" />
+        <a asp-action="Index" class="btn btn-success">Back</a>
+    </div>
+</form>
