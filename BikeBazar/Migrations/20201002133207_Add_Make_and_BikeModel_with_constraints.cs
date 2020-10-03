@@ -2,7 +2,7 @@
 
 namespace BikeBazar.Migrations
 {
-    public partial class Added_Make_and_BikeModel : Migration
+    public partial class Add_Make_and_BikeModel_with_constraints : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace BikeBazar.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -25,7 +25,7 @@ namespace BikeBazar.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(maxLength: 255, nullable: false),
                     MakeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

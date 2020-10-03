@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BikeBazar.Migrations
 {
     [DbContext(typeof(BikeDbContext))]
-    [Migration("20201002101656_Added_Make_and_BikeModel")]
-    partial class Added_Make_and_BikeModel
+    [Migration("20201002133207_Add_Make_and_BikeModel_with_constraints")]
+    partial class Add_Make_and_BikeModel_with_constraints
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,7 +31,9 @@ namespace BikeBazar.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
@@ -48,7 +50,9 @@ namespace BikeBazar.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
 
                     b.HasKey("Id");
 
