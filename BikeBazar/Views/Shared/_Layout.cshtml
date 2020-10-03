@@ -6,6 +6,8 @@
     <title>@ViewData["Title"] - BikeBazar</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+
 </head>
 <body>
     <header>
@@ -22,7 +24,7 @@
                             Masters
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Makes</a>
+                            <a class="dropdown-item" asp-controller="Make" asp-action="Index">Makes</a>
                             <a class="dropdown-item" href="#">Bike Model</a>
                             @*<div class="dropdown-divider"></div>*@
                             @*<a class="dropdown-item" href="#">Something else here</a>*@
@@ -43,7 +45,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container text-center">
             &copy; 2020 - BikeBazar - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
